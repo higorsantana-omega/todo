@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import Card from './components/Card'
 import './App.css'
 
 function App() {
@@ -7,10 +7,12 @@ function App() {
 
   return (
     <div className='App'>
-      <div>
+      <div className='add-todo'>
         <input type="text" placeholder='Fazer sla'/>
         <button>Adicionar</button>
       </div>
+
+      <Card title={'Titutlo'} />
     </div>
   )
 }
