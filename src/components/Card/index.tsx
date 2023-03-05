@@ -1,17 +1,28 @@
+import { Todo } from '../../App'
 import './styles.css'
 
 type CardProps = {
-  title: string
+  todo: Todo
+  changeCompleteTodo: (id: string) => void
+  deleteTodo: (id: string) => void
 }
 
-export default function Card ({ title }: CardProps) {
+export default function Card ({ todo, changeCompleteTodo, deleteTodo }: CardProps) {
+  function handleCompleteTodo () {
+    changeCompleteTodo(todo.id)
+  }
+
+  function handleDeleteTodo () {
+    deleteTodo(todo.id)
+  }
+
   return (
-    <div className='card'>
-      <h2>{title}</h2>
+    <div className={`card ${todo.completed ? 'done' : ''}`}>
+      <h2>{todo.title}</h2>
 
       <div className="card-buttons">
-        <button>Completar</button>
-        <button>Deletar</button>
+        <button onClick={handleCompleteTodo}>{todo.completed ? 'Retomar' : 'Completar'}</button>
+        <button onClick={handleDeleteTodo}>Deletar</button>
       </div>
     </div>
   )
