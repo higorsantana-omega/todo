@@ -55,14 +55,16 @@ function App() {
     <div className='App'>
       <div className='add-todo'>
         <Input todoInput={todoInput} handleInputChange={handleInputChange} />
-        <button onClick={handleAddTodo}>Adicionar</button>
+        <button onClick={handleAddTodo} id='button_add_todo'>Adicionar</button>
       </div>
 
-      {
-        todos.map((todo) => (
-          <Card key={todo.id} todo={todo} changeCompleteTodo={changeCompleteTodo} deleteTodo={deleteTodo}/>
-        ))
-      }
+      <div id='todo_list'>
+        {
+          todos.map((todo) => (
+            <Card todo={todo} changeCompleteTodo={changeCompleteTodo} deleteTodo={deleteTodo}/>
+          ))
+        }
+      </div>
     </div>
   )
 }
