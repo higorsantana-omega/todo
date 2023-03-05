@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import Card from './components/Card'
 import './App.css'
 import Input from './components/Input'
+import Hours from './components/Hours'
 
 export type Todo = {
   id: string
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className='App'>
+      <Hours />
       <div className='add-todo'>
         <Input todoInput={todoInput} handleInputChange={handleInputChange} />
         <button onClick={handleAddTodo} id='button_add_todo'>Adicionar</button>
