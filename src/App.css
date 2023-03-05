@@ -13,10 +13,6 @@
   display: flex;
 }
 
-.add-todo input {
-  width: 100%;
-}
-
 .todos {
   display: flex;
   flex-direction: column;

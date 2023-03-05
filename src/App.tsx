@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import Card from './components/Card'
 import './App.css'
+import Input from './components/Input'
 
 export type Todo = {
   id: string
@@ -53,7 +54,7 @@ function App() {
   return (
     <div className='App'>
       <div className='add-todo'>
-        <input type="text" placeholder='Digite sua tarefa' value={todoInput} onChange={handleInputChange}/>
+        <Input todoInput={todoInput} handleInputChange={handleInputChange} />
         <button onClick={handleAddTodo}>Adicionar</button>
       </div>
 
