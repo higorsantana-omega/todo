@@ -1,4 +1,5 @@
 import { Todo } from '../../App'
+import { useTimer } from '../../hooks/useTimer'
 import './styles.css'
 
 type CardProps = {
@@ -8,6 +9,8 @@ type CardProps = {
 }
 
 export default function Card ({ todo, changeCompleteTodo, deleteTodo }: CardProps) {
+  const { time } = useTimer(todo.time)
+
   function handleCompleteTodo () {
     changeCompleteTodo(todo.id)
   }
@@ -21,6 +24,7 @@ export default function Card ({ todo, changeCompleteTodo, deleteTodo }: CardProp
       <h2>{todo.title}</h2>
 
       <div className="card-buttons">
+        <span>{time}</span>
         <button onClick={handleCompleteTodo}>{todo.completed ? 'Retomar' : 'Completar'}</button>
         <button onClick={handleDeleteTodo}>Deletar</button>
       </div>

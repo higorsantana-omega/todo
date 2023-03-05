@@ -8,6 +8,7 @@ export type Todo = {
   id: string
   title: string
   completed: boolean
+  time: string
 }
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
     const newTodo: Todo = {
       id: Math.random().toString(),
       completed: false,
-      title: todoInput
+      title: todoInput,
+      time: '00:00:00'
     }
     setTodos((previousTodos) => [...previousTodos, newTodo])
 
