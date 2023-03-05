@@ -9,6 +9,7 @@ type InputProps = {
 export default function Input ({ todoInput, handleInputChange }: InputProps) {
   return (
     <input
+      id='input_todo'
       type="text"
       placeholder='Digite sua tarefa'
       value={todoInput}
